@@ -218,7 +218,7 @@ for i in range(0,len(fls_names)):
             '-novsync -dump'))
     else:
         ''' linux '''
-        os.system('wine {} {} {} {} {} {}'.format(
+        os.system('xvfb-run -a wine {} {} {} {} {} {}'.format(
             warp_exe,
             os.path.join(cur_dir, '..', '..', opt_parser.jpg),
             os.path.join(cur_dir, '..', 'triangulation.txt'),

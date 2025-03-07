@@ -59,6 +59,17 @@ sudo apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ xenial ma
 sudo apt update
 sudo apt install --install-recommends winehq-stable
 ```
+- Tested on Ubuntu 22.04 (Linux Mint 21.x) & Using a virtual display in a headless server environment.
+```
+sudo dpkg --add-architecture i386
+wget -nc https://dl.winehq.org/wine-builds/winehq.key
+sudo apt-key add winehq.key
+sudo apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ jammy main'
+sudo apt update
+
+sudo apt install --install-recommends winehq-stable
+nohup xvfb-run winecfg > winecfg.log 2>&1 &   
+```
 
 ## Pre-trained Models
 
