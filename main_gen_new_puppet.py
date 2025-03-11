@@ -148,15 +148,15 @@ def click_adjust_wireframe(event, x, y, flags, param):
 
 draw_landmarks(img, pts)
 
-cv2.namedWindow("img", cv2.WINDOW_NORMAL)
-cv2.setMouseCallback("img", click_adjust_wireframe)
+# cv2.namedWindow("img", cv2.WINDOW_NORMAL)
+# cv2.setMouseCallback("img", click_adjust_wireframe)
 
-while(True):
-    cv2.imshow('img', img)
-    key = cv2.waitKey(1)
-    if key == ord("q"):
-        break
-cv2.destroyAllWindows()
+# while(True):
+#     cv2.imshow('img', img)
+#     key = cv2.waitKey(1)
+#     if key == ord("q"):
+#         break
+# cv2.destroyAllWindows()
 
 print('vis and refine landmark Done!')
 pts = np.concatenate([pts, np.ones((68, 1))], axis=1)
@@ -180,7 +180,8 @@ Press Q or close the image window to continue.
 ================================================================= '''
 
 
-norm_anno(data_dir, CH, param=[0.7, 0.4, 0.5, 0.5], show=True)
+# norm_anno(data_dir, CH, param=[0.7, 0.4, 0.5, 0.5], show=True)
+norm_anno(data_dir, CH, param=[0.7, 0.4, 0.5, 0.5], show=False)
 
 
 ''' =================================================================

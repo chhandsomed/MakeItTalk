@@ -101,7 +101,7 @@ def norm_anno(ROOT_DIR, CH, param=[0.75, 0.35, 0.6, 0.6], show=True):
         if (show_now):
             plt.show()
 
-    vis_landmark_on_plt(std_face_id, show_now=show)
+    # vis_landmark_on_plt(std_face_id, show_now=show)
 
 
 
@@ -162,11 +162,12 @@ def draw_voronoi(img, subdiv):
 def delauney_tri(ROOT_DIR, test_data, INNER_ONLY=False):
     # Define window names
     win_delaunay = "Delaunay Triangulation"
-    cv2.namedWindow(win_delaunay, cv2.WINDOW_NORMAL)
+    # cv2.namedWindow(win_delaunay, cv2.WINDOW_NORMAL)
     win_voronoi = "Voronoi Diagram"
 
     # Turn on animation while drawing triangles
-    animate = True
+    # animate = True
+    animate = False
 
     # Define colors for drawing.
     delaunay_color = (255, 255, 255)
@@ -234,8 +235,8 @@ def delauney_tri(ROOT_DIR, test_data, INNER_ONLY=False):
             cv2.imshow(win_delaunay, img_copy)
             cv2.waitKey(100)
 
-    # Draw delaunay triangles
-    draw_delaunay(img, subdiv, (255, 255, 0))
+    # # Draw delaunay triangles
+    # draw_delaunay(img, subdiv, (255, 255, 0))
     triangleList = subdiv.getTriangleList()
 
     p_dict = {}  # Initialize empty dictionary.
@@ -249,13 +250,13 @@ def delauney_tri(ROOT_DIR, test_data, INNER_ONLY=False):
     # Allocate space for voronoi Diagram
     img_voronoi = np.zeros(img.shape, dtype=img.dtype)
 
-    # Draw voronoi diagram
-    draw_voronoi(img_voronoi, subdiv)
+    # # Draw voronoi diagram
+    # draw_voronoi(img_voronoi, subdiv)
 
-    # Show results
-    cv2.imshow(win_delaunay, img)
-    print("Press any key to quit...")
-    cv2.waitKey(0)
+    # # Show results
+    # cv2.imshow(win_delaunay, img)
+    # print("Press any key to quit...")
+    # cv2.waitKey(0)
 
     new_tri = [];
 
